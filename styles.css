@@ -24,7 +24,7 @@
 @font-face {
   font-family: "Navia";
   src: url("../Catsketchy/Navia.eot");
-  src: local("☺"), url("../Catsketchy/Navia.woff") format("woff"), url("../Catsketchy/Navia.ttf") format("truetype"), url("../Catsketchy/Navia.svg") format("svg");
+  src: local("☺"), url("./Catsketchy/Navia.woff") format("woff"), url("./Catsketchy/Navia.ttf") format("truetype"), url("./Catsketchy/Navia.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 @keyframes headFade {
