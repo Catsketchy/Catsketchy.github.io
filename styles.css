@@ -52,7 +52,7 @@ header {
   animation-name: headFade;
   animation-duration: 4s;
   animation-fill-mode: forwards;
-  font-family: "Navia";
+font-family: 'Lobster', cursive;
   font-size: 130px;
   clear: left;
   float: left;
@@ -62,9 +62,11 @@ header {
   margin: 0px;
   width: 90%;
   color: #c8fae6; }
-  header p {
+  
+header p {
     color: white;
-    font-family: "Domine"; }
+font-family: 'Nunito', sans-serif;
+}
 
 nav {
   padding-right: 50px;
