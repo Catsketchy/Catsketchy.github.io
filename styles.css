@@ -38,7 +38,7 @@ html {
 body {
   opacity: 1;
   transition: 1s opacity;
-  font-family: Conv_Nunito-Regular;
+  font-family: 'Nunito', sans-serif;
   color: white;
   background-color: bodygray;
   margin: 0px;
