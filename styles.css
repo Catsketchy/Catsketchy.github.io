@@ -26,7 +26,9 @@ header {
   animation-name: headFade;
   animation-duration: 4s;
   animation-fill-mode: forwards;
-font-family: 'Lobster', cursive;
+font-family: 'Abril Fatface', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Righteous', cursive;
   font-size: 130px;
   clear: left;
   float: left;
