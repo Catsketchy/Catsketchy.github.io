@@ -65,8 +65,12 @@ header {
 .blueText {
   color: #c8fae6; }
 
-.blueText:hover {
+.blueText:hover, .redText:hover {
   animation: textColors 1s alternate infinite; }
+
+.redText {
+  text-decoration: none;
+  color: #f24b72; }
 
 nav {
   padding-top: 20px;
