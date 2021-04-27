@@ -1,0 +1,47 @@
+.outer {
+  margin: 10px;
+  padding: 50px 50px 20px;
+  width: 272px;
+  float: left; }
+
+.projects {
+  border-radius: 8px;
+  border: 1px solid white;
+  height: 320px;
+  overflow: hidden;
+  animation: shadowSlideIn 1s forwards; }
+  .projects:hover {
+    animation: shadowSlideOut 0.7s forwards;
+    background: #145050; }
+    .projects:hover img {
+      animation: pulse 2s alternate infinite; }
+
+p {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin: 0px; }
+
+h3 {
+  color: rgba(255, 250, 245, 0.9);
+  margin: 0px;
+  padding: 0px;
+  text-align: center; }
+
+.projectTitle {
+  margin: 3% 0px 0px 0px;
+  padding: 3% 0% 0% 0%;
+  background: rgba(255, 255, 255, 0.2);
+  height: 25%; }
+
+img {
+  width: 200px;
+  -webkit-clip-path: circle(45.7% at 50% 50%);
+  clip-path: circle(45.7% at 50% 50%);
+  border: 1px solid white; }
+
+@keyframes pulse {
+  50% {
+    webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); } }
+
+/*# sourceMappingURL=projects.css.map */

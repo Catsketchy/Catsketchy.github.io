@@ -4,7 +4,11 @@
 
 
 $mintcolor: rgb(200,250,230)
-$bodygray: rgb(50,50,50)
+$bodygray: rgb(30,40,45)
+
+$shadowRed: rgb(255,110,100)
+$shadowBlue: rgb(115,200,245)
+
 $nunito: 'Nunito', sans-serif
 
 //fade in animation upon site load
@@ -14,6 +18,24 @@ $nunito: 'Nunito', sans-serif
 	to 
 		color: $mintcolor
 
+//slide out shadow animation upon site load
+@keyframes shadowSlideOut
+	from
+		margin-left: 5px
+		box-shadow: 30px 30px 0 $shadowRed
+	to
+		margin-left: 0px
+		box-shadow: 40px 40px 0 $shadowBlue
+
+
+//slide out shadow animation upon site load
+@keyframes shadowSlideIn
+	from
+		margin-left: 0px
+		box-shadow: 40px 40px 0 $shadowBlue
+	to
+		margin-left: 5px
+		box-shadow: 30px 30px 0 $shadowRed
 
 @keyframes homeShapes
 	50%
@@ -31,6 +53,25 @@ $nunito: 'Nunito', sans-serif
 	100%
 		color: yellow
 	
+@keyframes navShadowSlideOut
+	from
+		//margin-right: 1px
+		box-shadow: 0 0 0 $shadowRed
+	to
+		//margin-left: 1px
+		box-shadow: 5px 3px 0 $shadowRed
+		background-color: rgba(200, 255, 255, 0.2)
+	
+@keyframes navShadowSlideIn
+	from
+		//margin-left: 1px
+		box-shadow: 5px 3px 0 $shadowRed
+		background-color: rgba(230, 255, 255, 0.1)
+
+	to
+		//margin-right: 1px
+		box-shadow: 0 0 0 $shadowRed
+		
 	
 html 
 	background-color: $bodygray
@@ -40,7 +81,6 @@ body
 	transition: 1s opacity
 	font-family:  nunito
 	color: white
-	//background-color: rgb(245,245,245)
 	background-color: bodygray
 	margin: 0px
 	padding-top: 0px
@@ -56,16 +96,6 @@ body.fade-out
 	height: 300px
 	width: 100%
 	margin: 0px
-
-@mixin navigation
-	float: right
-	width: 130px
-	height: 35px
-	vertical-align: center
-	font-size: 18px
-	margin: 0px
-	padding: 0px
-	text-align: center	
 
 header
 	animation: headFade 4s forwards
@@ -85,9 +115,8 @@ header
 	height: 120px
 	-webkit-clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 79% 59%, 79% 91%, 50% 79%, 21% 91%, 23% 59%, 2% 35%, 34% 29%)
 	clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 79% 59%, 79% 91%, 50% 79%, 21% 91%, 23% 59%, 2% 35%, 34% 29%)
-
-.shape:hover
-	animation: homeShapes 4s alternate infinite
+	&:hover
+		animation: homeShapes 4s alternate infinite
 
 .blueText 
 	color: $mintcolor
@@ -99,19 +128,98 @@ header
 	text-decoration: none
 	color: rgb(242,75,114) 
 	
-
 nav
 	padding-top: 20px
 	height: 50px
 	width: 100%
+	#menuItems
+		height: 35px
+		vertical-align: center
+		margin: 0 50px 0 0
+		padding: 0px
+		text-align: center
+			
 	a
 		//position: fixed
 		text-decoration: none
 		color: rgb(240,240,240)
+		width: 155px
+
+		h1
+			float: left
+			width: 150px
+			padding-left: 50px
+			margin-top: 0px
+			margin-bottom: 0px
+			font-size: 20px
+	
 		h2
-			@include navigation
+			float: right
+			width: 120px
+			font-size: 18px
+			margin: 10px
+			animation: navShadowSlideIn .5s forwards
+
 
 		h2:hover 
 			color: white
-			border-bottom: 1px solid $mintcolor
+			//border-bottom: 1px solid $mintcolor
+			animation: navShadowSlideOut .5s forwards
+
+.halfDiv 
+	float: left
+	width: 50%
+	height: 80vh
+	margin: 0
+	padding: 0
+
+
+#profile
+	display: flex
+	align-items: center
+
+#nameTitle 
+	text-align: right
+
+#myName 
+	color: white
+	font-size: 46px
+	line-height: 83px
+	text-align: right
+	h1
+		margin-top: 30% 
+		text-shadow: 5px 5px $shadowRed
+
+#myTitle
+	margin-top: 10px
+
+.rightText 
+	margin: 0 110px 0 0
+
+.contentBaseDiv
+	height: 300px
+	width: 300px
+	background: rgb(255,220,220)
+	border-radius: 8px
+	display: flex
+	align-items: center
+	animation: shadowSlideIn 1s forwards
+	#img
+		height: 270px
+		width: 270px
+		margin: auto
+		overflow: hidden
+		border-radius: 8px
+
+		img
+			width: 100%
+	&:hover
+		animation: shadowSlideOut .7s forwards
+
+.wrapper
+	width: 255px
+	height: 255px
+	margin: auto
+
+
 	

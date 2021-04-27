@@ -5,6 +5,20 @@
     color: rgba(200, 250, 230, 0); }
   to {
     color: #c8fae6; } }
+@keyframes shadowSlideOut {
+  from {
+    margin-left: 5px;
+    box-shadow: 30px 30px 0 #ff6e64; }
+  to {
+    margin-left: 0px;
+    box-shadow: 40px 40px 0 #73c8f5; } }
+@keyframes shadowSlideIn {
+  from {
+    margin-left: 0px;
+    box-shadow: 40px 40px 0 #73c8f5; }
+  to {
+    margin-left: 5px;
+    box-shadow: 30px 30px 0 #ff6e64; } }
 @keyframes homeShapes {
   50% {
     -webkit-clip-path: polygon(50% 35%, 61% 16%, 81% 13%, 100% 32%, 96% 61%, 51% 100%, 4% 61%, 0 32%, 19% 13%, 39% 16%);
@@ -19,8 +33,20 @@
     color: #c8ffb4; }
   100% {
     color: yellow; } }
+@keyframes navShadowSlideOut {
+  from {
+    box-shadow: 0 0 0 #ff6e64; }
+  to {
+    box-shadow: 5px 3px 0 #ff6e64;
+    background-color: rgba(200, 255, 255, 0.2); } }
+@keyframes navShadowSlideIn {
+  from {
+    box-shadow: 5px 3px 0 #ff6e64;
+    background-color: rgba(230, 255, 255, 0.1); }
+  to {
+    box-shadow: 0 0 0 #ff6e64; } }
 html {
-  background-color: #323232; }
+  background-color: #1e282d; }
 
 body {
   opacity: 1;
@@ -58,9 +84,8 @@ header {
   height: 120px;
   -webkit-clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 79% 59%, 79% 91%, 50% 79%, 21% 91%, 23% 59%, 2% 35%, 34% 29%);
   clip-path: polygon(50% 0%, 65% 29%, 98% 35%, 79% 59%, 79% 91%, 50% 79%, 21% 91%, 23% 59%, 2% 35%, 34% 29%); }
-
-.shape:hover {
-  animation: homeShapes 4s alternate infinite; }
+  .shape:hover {
+    animation: homeShapes 4s alternate infinite; }
 
 .blueText {
   color: #c8fae6; }
@@ -76,20 +101,84 @@ nav {
   padding-top: 20px;
   height: 50px;
   width: 100%; }
+  nav #menuItems {
+    height: 35px;
+    vertical-align: center;
+    margin: 0 50px 0 0;
+    padding: 0px;
+    text-align: center; }
   nav a {
     text-decoration: none;
-    color: #f0f0f0; }
+    color: #f0f0f0;
+    width: 155px; }
+    nav a h1 {
+      float: left;
+      width: 150px;
+      padding-left: 50px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 20px; }
     nav a h2 {
       float: right;
-      width: 130px;
-      height: 35px;
-      vertical-align: center;
+      width: 120px;
       font-size: 18px;
-      margin: 0px;
-      padding: 0px;
-      text-align: center; }
+      margin: 10px;
+      animation: navShadowSlideIn 0.5s forwards; }
     nav a h2:hover {
       color: white;
-      border-bottom: 1px solid #c8fae6; }
+      animation: navShadowSlideOut 0.5s forwards; }
+
+.halfDiv {
+  float: left;
+  width: 50%;
+  height: 80vh;
+  margin: 0;
+  padding: 0; }
+
+#profile {
+  display: flex;
+  align-items: center; }
+
+#nameTitle {
+  text-align: right; }
+
+#myName {
+  color: white;
+  font-size: 46px;
+  line-height: 83px;
+  text-align: right; }
+  #myName h1 {
+    margin-top: 30%;
+    text-shadow: 5px 5px #ff6e64; }
+
+#myTitle {
+  margin-top: 10px; }
+
+.rightText {
+  margin: 0 110px 0 0; }
+
+.contentBaseDiv {
+  height: 300px;
+  width: 300px;
+  background: #ffdcdc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  animation: shadowSlideIn 1s forwards; }
+  .contentBaseDiv #img {
+    height: 270px;
+    width: 270px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px; }
+    .contentBaseDiv #img img {
+      width: 100%; }
+  .contentBaseDiv:hover {
+    animation: shadowSlideOut 0.7s forwards; }
+
+.wrapper {
+  width: 255px;
+  height: 255px;
+  margin: auto; }
 
 /*# sourceMappingURL=styles.css.map */
